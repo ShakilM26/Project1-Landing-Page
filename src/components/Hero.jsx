@@ -33,7 +33,7 @@ const Hero = () => {
             className="outline-none px-3"
           />
 
-          <button className="bg-[#4640DE] text-[white]">
+          <button className="bg-[#4640DE] text-[black]">
             Search my job
           </button>
 
