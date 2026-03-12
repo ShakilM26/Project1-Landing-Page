@@ -1,12 +1,16 @@
+import {
+  PenTool, BarChart, Megaphone, Wallet, Monitor, Code, Briefcase, Users
+} from "lucide-react";
+
 const categories = [
-  { name: "Design", jobs: 235 },
-  { name: "Sales", jobs: 756 },
-  { name: "Marketing", jobs: 140, featured: true },
-  { name: "Finance", jobs: 325 },
-  { name: "Technology", jobs: 436 },
-  { name: "Engineering", jobs: 542 },
-  { name: "Business", jobs: 211 },
-  { name: "Human Resource", jobs: 346 },
+  { name: "Design", jobs: 235, icon: PenTool},
+  { name: "Sales", jobs: 756, icon: BarChart},
+  { name: "Marketing", jobs: 140, icon:Megaphone, featured: true },
+  { name: "Finance", jobs: 325 , icon: Wallet},
+  { name: "Technology", jobs: 436,icon: Monitor },
+  { name: "Engineering", jobs: 542, icon: Code },
+  { name: "Business", jobs: 211, icon: Briefcase},
+  { name: "Human Resource", jobs: 346, icon: Users},
 ];
 
 const Categories = () => {
@@ -27,29 +31,28 @@ const Categories = () => {
 
       <div className="grid grid-cols-4 gap-6">
 
-        {categories.map((cat, index) => (
-          <div
-            key={index}
-            className={`p-6 border rounded cursor-pointer 
-            ${cat.featured
+        {categories.map((category, index) => {
+          const Icon = category.icon;
+
+          return(
+            <div key={index}
+            className={`p-8 border 
+              ${category.featured
                 ? "bg-blue-600 text-white"
                 : "bg-white hover:shadow"
-            }`}
-          >
+              }`}
+            >
+              <Icon className="mb-4" />
+              <h3 className="font-semibold text-lg">
+                {category.name}
+              </h3>
 
-
-            <div className="text-2x">📁</div>
-
-            <h3 className="font-semibold">
-              {cat.name}
-            </h3>
-
-            <p className="text-sm opacity-70 mt-1">
-              {cat.jobs} jobs available →
-            </p>
-
-          </div>
-        ))}
+              <p className="text-sm opacity-70">
+                {category.jobs} jobs available →
+              </p>
+            </div>
+          );
+        })};
 
       </div>
 
