@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Companies from '../components/Companies'
 import Categories from '../components/Categories';
 import CTA from '../components/CTA';
+import FeaturedJobs from '../components/FeaturedJob';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Companies />
       <Categories />
       <CTA />
+      <FeaturedJobs />
     </div>
   );
 };
